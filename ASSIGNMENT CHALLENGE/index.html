@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Safari | Authentic Food Ordering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="container header-container">
+            <h1 class="logo">
+                <i class="ph ph-bowl-food"></i> Spice Safari
+            </h1>
+            <p class="tagline">Authentic Indian Flavors</p>
+        </div>
+    </header>
+
+    <main class="container main-layout">
+        <section class="products-section" aria-label="Food Menu">
+            <div class="section-header">
+                <h2>Our Menu</h2>
+                <div class="filters">
+                    <button class="filter-btn active" tabindex="0">All</button>
+                    <button class="filter-btn" tabindex="0">Veg</button>
+                    <button class="filter-btn" tabindex="0">Non-Veg</button>
+                    <button class="filter-btn" tabindex="0">Desserts</button>
+                </div>
+            </div>
+            
+            <div id="product-grid" class="product-grid">
+            </div>
+        </section>
+
+        <aside class="cart-section" aria-label="Shopping Cart">
+            <div class="cart-container">
+                <div class="cart-header">
+                    <h2><i class="ph ph-shopping-cart"></i> Your Cart</h2>
+                    <span id="cart-count" class="cart-count" aria-live="polite">0</span>
+                </div>
+                
+                <div id="cart-items" class="cart-items">
+                    <div class="empty-cart" id="empty-cart">
+                        <i class="ph ph-shopping-bag-open"></i>
+                        <p>Your cart is empty.</p>
+                        <p class="sub-text">Add some delicious items to get started!</p>
+                    </div>
+                </div>
+
+                <div class="cart-summary" id="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Taxes & Fees</span>
+                        <span id="taxes">$0.00</span>
+                    </div>
+                    <div class="summary-line"></div>
+                    <div class="summary-row total-row">
+                        <span>Total</span>
+                        <span id="total-price">$0.00</span>
+                    </div>
+                    
+                    <button id="confirm-order-btn" class="btn-primary confirm-btn" disabled tabindex="0">
+                        Confirm Order
+                    </button>
+                    <p class="carbon-note"><i class="ph ph-leaf"></i> Carbon-neutral delivery</p>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <div id="order-modal" class="modal-backdrop hidden" aria-hidden="true" role="dialog">
+        <div class="modal">
+            <button id="close-modal" class="close-btn" aria-label="Close modal"><i class="ph ph-x"></i></button>
+            <div class="modal-content">
+                <div class="success-icon">
+                    <i class="ph ph-check-circle"></i>
+                </div>
+                <h2>Order Confirmed!</h2>
+                <p>Your delicious food is being prepared and will be with you shortly.</p>
+                <div class="order-receipt" id="order-receipt">
+                </div>
+                <div class="modal-total">
+                    <span>Amount Paid:</span>
+                    <span id="modal-total-amount">$0.00</span>
+                </div>
+                <button id="new-order-btn" class="btn-primary new-order-btn">Start New Order</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
